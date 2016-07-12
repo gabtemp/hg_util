@@ -9,7 +9,7 @@ Mercurial (hg) utility functions for [fish]. Based on [git_util]
 With [fisherman]
 
 ```
-fisher hg_util
+fisher gabtemp/hg_util
 ```
 
 ## Functions - Work in progress
