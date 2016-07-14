@@ -13,10 +13,12 @@ fisher gabtemp/hg_util
 ```
 
 ## Functions - Work in progress
- Plugin                 | Build Status |
+| Plugin                 | Build Status																 |
 |-----------------------|----------------------------------------------------------------------------|
 | hg_branch_name        | Get the name of the current branch                                         |
+| hg_is_empty           | Test if a repository is empty                                              |
 | hg_is_repo            | Test if the current directory is a mercurial repository                    |
+| hg_repository_root    | Get the root directory of the current repository                           |
 
 [travis-link]: https://travis-ci.org/gabtemp/hg_util
 [travis-badge]: https://img.shields.io/travis/gabtemp/hg_util.svg
