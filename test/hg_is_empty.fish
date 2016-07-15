@@ -1,11 +1,13 @@
 set -l path $DIRNAME/.t-$TESTNAME-(random)
 
 function -S setup
-    mkdir -p $path/empty
-    mkdir -p $path/not-empty
+    mkdir -p $path/{empty,notempty}
     
-    cd $path/not-empty
-    command hg init
+    for name in empty notempty
+        cd $path/$name
+        command hg init
+    end
+    cd $path/notempty
     touch file
     command hg add file
     command hg commit -m "commit" -u "user"
@@ -17,7 +19,7 @@ end
 
 test "$TESTNAME - Test not empty repository"
     1 -eq (
-	    pushd $path/not-empty
+	    pushd $path/notempty
         hg_is_empty
         echo $status
         popd
