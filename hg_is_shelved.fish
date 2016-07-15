@@ -3,5 +3,10 @@ function hg_is_shelved
         return 1
     end
 
-    test 0 -eq (command hg shelve --list ^ /dev/null | wc --lines); and return 1; or return 0
+    set -l shelves (command hg shelve --list ^ /dev/null)
+    if test 0 -ne $status
+       or test -z "$shelves"
+       return 1
+    end
+
 end
