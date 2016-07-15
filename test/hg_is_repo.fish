@@ -4,7 +4,7 @@ function -S setup
     mkdir -p $path/repo/long/ass/path/still/in/the/repository
     mkdir -p $path/not-repo
     cd $path/repo
-    command hg init
+    command hg --quiet init
 end
 
 function -S teardown

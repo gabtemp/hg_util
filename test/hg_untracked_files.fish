@@ -5,13 +5,13 @@ function -S setup
 
     for name in tracked untracked
         cd $path/$name
-	    command hg init
+	    command hg --quiet init
 	    for i in (seq 5)
 	    	touch file_$i
 	    end
     end
     cd $path/tracked
-    command hg add *
+    command hg --quiet add *
 end
 
 function -S teardown

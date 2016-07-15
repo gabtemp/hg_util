@@ -5,12 +5,12 @@ function -S setup
     
     for name in empty notempty
         cd $path/$name
-        command hg init
+        command hg --quiet init
     end
     cd $path/notempty
     touch file
-    command hg add file
-    command hg commit -m "commit" -u "user"
+    command hg --quiet add file
+    command hg --quiet commit -m "commit" -u "user"
 end
 
 function -S teardown

@@ -5,8 +5,8 @@ function -S setup
 
     for name in default branch
     	cd $path/$name
-        command hg init
-        command hg branch $name
+        command hg --quiet init
+        command hg --quiet branch $name
     end
 end
 
