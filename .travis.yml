@@ -4,6 +4,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get -y install fish mercurial
 script:
+    - echo -e "[extensions]\nshelve=" >> ~/.hgrc
     - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
     - fish -c "fisher fishtape .; fishtape test/*.fish"
     
